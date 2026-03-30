@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap');
+
+:root {
+  --ca-navy:     #0A0F1E;
+  --ca-charcoal: #111827;
+  --ca-electric: #00D4FF;
+  --ca-mint:     #00FFB2;
+  --ca-slate:    #1E293B;
+  --ca-muted:    #64748B;
+  --ca-offwhite: #F8FAFC;
+  --ca-white:    #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--ca-navy);
+  color: var(--ca-white);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .text-gradient-electric {
+    background: linear-gradient(90deg, #00D4FF 0%, #00FFB2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-electric-subtle {
+    border: 1px solid rgba(0, 212, 255, 0.2);
+  }
+
+  .bg-electric-glow {
+    box-shadow: 0 0 60px rgba(0, 212, 255, 0.15);
+  }
+
+  .card-dark {
+    background: #111827;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+  }
+}
