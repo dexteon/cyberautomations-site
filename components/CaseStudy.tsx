@@ -62,7 +62,7 @@ export default function CaseStudy() {
               </footer>
             </blockquote>
 
-            <a href="#audit" className="w-full text-center px-6 py-3 text-sm font-semibold text-ca-navy bg-ca-electric rounded-xl hover:brightness-110 transition-all">
+            <a href="/apply" className="w-full text-center px-6 py-3 text-sm font-semibold text-ca-navy bg-ca-electric rounded-xl hover:brightness-110 transition-all">
               Get results like this →
             </a>
           </div>

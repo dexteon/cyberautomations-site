@@ -90,7 +90,7 @@ export default function ApplyPage() {
                 <label htmlFor="name" className={labelClass}>
                   Full Name <span className="text-ca-accent">*</span>
                 </label>
-                <input id="name" name="name" type="text" required value={form.name} onChange={handleChange} className={inputClass} placeholder="Teon Moore" />
+                <input id="name" name="name" type="text" required value={form.name} onChange={handleChange} className={inputClass} placeholder="Your name" />
               </div>
               <div>
                 <label htmlFor="email" className={labelClass}>
@@ -138,10 +138,10 @@ export default function ApplyPage() {
                 </label>
                 <select id="budget" name="budget" required value={form.budget} onChange={handleChange} className={inputClass}>
                   <option value="" disabled>Select a range</option>
-                  <option value="under-500">Under $500/mo</option>
-                  <option value="500-1000">$500–$1,000/mo</option>
-                  <option value="1000-2500">$1,000–$2,500/mo</option>
-                  <option value="2500+">$2,500+/mo</option>
+                  <option value="under-1000">Under $1,000/mo</option>
+                  <option value="1000-2000">$1,000–$2,000/mo</option>
+                  <option value="2000-3000">$2,000–$3,000/mo</option>
+                  <option value="3000+">$3,000+/mo</option>
                 </select>
               </div>
               <div>
@@ -159,7 +159,7 @@ export default function ApplyPage() {
 
             {state === "error" && (
               <p className="text-red-600 text-sm">
-                Something went wrong. Please try again or email teonmoore@gmail.com directly.
+                Something went wrong. Please try again or email hello@cyberautomations.com directly.
               </p>
             )}
 

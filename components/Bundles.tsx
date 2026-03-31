@@ -1,12 +1,12 @@
 const tiers = [
   {
     name: "Starter",
-    price: "$750",
+    price: "$997",
     cadence: "/mo",
     contract: "Month-to-month",
     tag: null,
     features: [
-      "20 pieces/week from one 5-min voice memo",
+      "Full multi-platform distribution pipeline",
       "Brand voice training on your content library",
       "Platform routing to your key channels",
       "Email support",
@@ -16,7 +16,7 @@ const tiers = [
   },
   {
     name: "Growth",
-    price: "$1,250",
+    price: "$1,497",
     cadence: "/mo",
     contract: "3-month minimum",
     tag: "Most Popular",
@@ -33,7 +33,7 @@ const tiers = [
   },
   {
     name: "Full Stack",
-    price: "$1,750",
+    price: "$1,997",
     cadence: "/mo",
     contract: "6-month minimum",
     tag: null,
@@ -76,10 +76,10 @@ export default function Bundles() {
         {/* Header */}
         <div className="text-center mb-14 space-y-3">
           <span className="section-label">Pricing</span>
-          <h2 className="display-lg mt-4">Content Machine Tiers</h2>
+          <h2 className="display-lg mt-4">Automation Tiers</h2>
           <p className="text-ca-muted max-w-xl mx-auto">
-            All tiers deliver the full 20-piece weekly output. Higher tiers unlock expanded
-            distribution, reporting, and support.
+            Every tier includes full distribution, support automation, and managed infrastructure.
+            Higher tiers unlock expanded reporting, strategy, and custom integrations.
           </p>
         </div>
 

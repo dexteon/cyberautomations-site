@@ -2,19 +2,22 @@ const creatorProducts = [
   {
     tag: "Flagship",
     tagClass: "text-ca-accent bg-ca-accent-light border-ca-accent/30",
-    title: "The Content Machine",
-    desc: "One 5-minute voice memo Monday morning. Twenty publication-ready pieces by afternoon — written in your voice, routed to your platforms.",
+    title: "Distribution Engine",
+    desc: "You create the content. We route it everywhere — formatted, scheduled, and published across all your platforms automatically.",
     features: [
-      "2 YouTube scripts, 6 Reels scripts, 3 emails, 5 community posts, 4 carousel outlines",
+      "Auto-format and distribute across 6+ platforms",
       "Brand voice trained on your existing content library",
       "Compliance gate for financial / health / legal niches",
       "Routes to GHL, Buffer, Skool, Google Drive",
     ],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <path d="M12 2a4 4 0 014 4v6a4 4 0 01-8 0V6a4 4 0 014-4z"/>
-        <path d="M19 10a7 7 0 01-14 0"/>
-        <line x1="12" y1="19" x2="12" y2="23"/>
+        <circle cx="18" cy="5" r="2"/>
+        <circle cx="18" cy="19" r="2"/>
+        <circle cx="6" cy="12" r="2"/>
+        <line x1="8" y1="12" x2="16" y2="6"/>
+        <line x1="8" y1="12" x2="16" y2="18"/>
+        <line x1="8" y1="12" x2="16" y2="12"/>
       </svg>
     ),
   },
@@ -59,7 +62,7 @@ const creatorProducts = [
     tag: "New",
     tagClass: "text-ca-accent bg-ca-accent-light border-ca-accent/30",
     title: "Creator Data Shield",
-    desc: "Automated personal data removal across 100+ data broker sites. CDPA-compliant reporting. Built for public-facing creators.",
+    desc: "Automated personal data removal across 100+ data broker sites. Starting at $15/mo per person, +$5/mo per additional family member. Built for public-facing creators.",
     features: [
       "Automated removal across 100+ data brokers",
       "Scheduled re-checks and re-submissions",
@@ -89,11 +92,11 @@ export default function Services() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-14 space-y-3">
-          <span className="section-label">Creator Stack</span>
+          <span className="section-label">What We Build</span>
           <h2 className="display-lg mt-4">Four Systems. One Infrastructure.</h2>
           <p className="text-ca-muted max-w-xl mx-auto text-base">
-            Built specifically for creators and educators doing $5K–$50K/month.
-            Stack them to run your entire content operation on autopilot.
+            Distribution, customer service, privacy protection, and custom AI tools —
+            built and managed so you can focus on your business.
           </p>
         </div>
 
@@ -138,7 +141,7 @@ export default function Services() {
           <div>
             <p className="font-display font-semibold text-ca-text">Need something custom?</p>
             <p className="text-ca-muted text-sm mt-0.5">
-              We also build AI agents, security automation, and enterprise data pipelines.
+              We also build custom AI agents, deep research systems, and backend automation tools.
             </p>
           </div>
           <a href="/apply" className="shrink-0">

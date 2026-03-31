@@ -18,20 +18,20 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "CyberAutomations — We Run Your Content Department",
+  title: "CyberAutomations — We Automate Your Backend",
   description:
-    "One 5-minute voice memo. Twenty publication-ready pieces by afternoon. AI systems built, deployed, and managed for creators and educators doing serious volume.",
+    "AI systems that distribute your content, run your marketing, handle customer service, and automate your backend. Built, deployed, and managed for creators and educators.",
   openGraph: {
-    title: "CyberAutomations — We Run Your Content Department",
+    title: "CyberAutomations — We Automate Your Backend",
     description:
-      "One voice memo. Twenty pieces. Built, deployed, and managed for you.",
+      "Distribution, marketing, customer service, and custom AI agents — built and managed for you.",
     url: "https://cyberautomations.com",
     siteName: "CyberAutomations",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CyberAutomations — We Run Your Content Department",
+    title: "CyberAutomations — We Automate Your Backend",
     description:
       "AI systems built and managed for creators who are serious about growth.",
   },

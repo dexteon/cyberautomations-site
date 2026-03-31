@@ -32,7 +32,7 @@ export default function Footer() {
             <p className="text-xs uppercase tracking-widest font-semibold text-ca-light mb-1">Company</p>
             <Link href="/apply" className="text-ca-muted hover:text-ca-text transition-colors">Apply</Link>
             <a href="#faq" className="text-ca-muted hover:text-ca-text transition-colors">FAQ</a>
-            <a href="mailto:teonmoore@gmail.com" className="text-ca-muted hover:text-ca-text transition-colors">Contact</a>
+            <Link href="/apply" className="text-ca-muted hover:text-ca-text transition-colors">Contact</Link>
           </div>
 
           {/* Legal */}

@@ -4,8 +4,8 @@ import Link from "next/link";
 // Pipeline node definitions
 const NODES = [
   {
-    label: "Voice Memo",
-    sub: "5-min input",
+    label: "Your Content",
+    sub: "You create it",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
         <path d="M12 2a4 4 0 014 4v6a4 4 0 01-8 0V6a4 4 0 014-4z"/>
@@ -16,8 +16,43 @@ const NODES = [
     ),
   },
   {
-    label: "9-Agent CrewAI",
-    sub: "Parallel execution",
+    label: "Auto-Distribution",
+    sub: "Multi-platform posting",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+        <circle cx="18" cy="5" r="2"/>
+        <circle cx="18" cy="19" r="2"/>
+        <circle cx="6" cy="12" r="2"/>
+        <line x1="8" y1="12" x2="16" y2="6"/>
+        <line x1="8" y1="12" x2="16" y2="18"/>
+        <line x1="8" y1="12" x2="16" y2="12"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Marketing Engine",
+    sub: "Campaigns on autopilot",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Support Bot",
+    sub: "24/7 customer service",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+        <circle cx="12" cy="10" r="1" fill="currentColor"/>
+        <circle cx="8" cy="10" r="1" fill="currentColor"/>
+        <circle cx="16" cy="10" r="1" fill="currentColor"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Custom AI Agents",
+    sub: "Built for your workflow",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
         <circle cx="12" cy="12" r="3"/>
@@ -33,49 +68,26 @@ const NODES = [
     ),
   },
   {
-    label: "Brand Voice Gate",
-    sub: "Trained on your content",
+    label: "Deep Research",
+    sub: "Business intelligence",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-        <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.32C17.25 22.15 21 17.25 21 12V7l-9-5z"/>
-        <polyline points="9 12 11 14 15 10"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Compliance Gate",
-    sub: "Finance · Health · Legal",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-        <rect x="5" y="11" width="14" height="10" rx="2"/>
-        <path d="M8 11V7a4 4 0 018 0v4"/>
-        <circle cx="12" cy="16" r="1" fill="currentColor"/>
-      </svg>
-    ),
-  },
-  {
-    label: "6-Platform Dist.",
-    sub: "Published by afternoon",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-        <circle cx="18" cy="5" r="2"/>
-        <circle cx="18" cy="19" r="2"/>
-        <circle cx="6" cy="12" r="2"/>
-        <line x1="8" y1="12" x2="16" y2="6"/>
-        <line x1="8" y1="12" x2="16" y2="18"/>
-        <line x1="8" y1="12" x2="16" y2="12"/>
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        <line x1="11" y1="8" x2="11" y2="14"/>
+        <line x1="8" y1="11" x2="14" y2="11"/>
       </svg>
     ),
   },
 ];
 
 const TICKER_ITEMS = [
-  "20 pieces/week",
-  "9-agent pipeline",
+  "Multi-platform distribution",
+  "Custom AI agents",
+  "24/7 AI customer support",
   "70% ticket reduction",
-  "$2.1M attributed pipeline",
-  "<2 min avg response",
-  "95%+ removal rate",
+  "Automated marketing funnels",
+  "Deep business research",
   "2–4 week deploy",
   "10+ hrs reclaimed weekly",
   "Enterprise-grade infrastructure",
@@ -101,22 +113,22 @@ export default function Hero() {
             <div className="space-y-8">
               {/* Badges */}
               <div className="flex flex-wrap gap-2">
-                {["For Creators & Educators", "Army & Verizon Pedigree", "2–4 Week Deploy"].map((b) => (
+                {["For Creators & Educators", "Enterprise-Grade Systems", "2–4 Week Deploy"].map((b) => (
                   <span key={b} className="section-label">{b}</span>
                 ))}
               </div>
 
               {/* Headline */}
               <h1 className="display-xl">
-                We Run Your{" "}
-                <span className="text-ca-accent">Content</span>{" "}
-                Department.
+                We Automate Your{" "}
+                <span className="text-ca-accent">Backend.</span>
               </h1>
 
               {/* Subhead */}
               <p className="text-ca-muted text-lg leading-relaxed max-w-md">
-                One 5-minute voice memo. Twenty publication-ready pieces by afternoon.
-                Built, deployed, and managed for you.
+                You create the content. We build the AI systems that distribute it,
+                run your marketing, handle customer service, and automate your backend
+                — from custom agents to deep research.
               </p>
 
               {/* CTAs */}
@@ -138,7 +150,7 @@ export default function Hero() {
             <div className="warm-card p-6 lg:p-8 shadow-sm">
               {/* Card label */}
               <p className="text-xs font-semibold text-ca-light uppercase tracking-widest mb-6">
-                Live pipeline — Content Machine
+                Your automation stack
               </p>
 
               {/* Pipeline nodes row */}
@@ -182,9 +194,9 @@ export default function Hero() {
               {/* Output stats */}
               <div className="mt-6 pt-5 border-t border-ca-border grid grid-cols-3 gap-4">
                 {[
-                  { v: "20", u: "pieces/week" },
-                  { v: "9", u: "AI agents" },
-                  { v: "6", u: "platforms" },
+                  { v: "6+", u: "platforms" },
+                  { v: "24/7", u: "AI support" },
+                  { v: "2–4 wk", u: "deploy" },
                 ].map(({ v, u }) => (
                   <div key={u} className="text-center">
                     <div className="font-display text-2xl font-bold text-ca-accent">{v}</div>
