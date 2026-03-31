@@ -8,8 +8,7 @@ export default function Footer() {
           {/* Logo + tagline */}
           <div className="space-y-3 sm:col-span-2 lg:col-span-1">
             <p
-              className="font-display text-sm font-bold tracking-widest uppercase text-ca-text"
-              style={{ letterSpacing: "0.12em" }}
+              className="font-display text-sm font-bold tracking-wider uppercase text-ca-text"
             >
               CYBER<span className="text-ca-accent">AUTOMATIONS</span>
             </p>

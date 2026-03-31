@@ -13,7 +13,7 @@ export default function About() {
             {/* Left — photo + stats */}
             <div className="bg-ca-cream-mid p-8 lg:p-10 flex flex-col items-center justify-center gap-8 border-b lg:border-b-0 lg:border-r border-ca-border">
               {/* Photo placeholder */}
-              <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-full bg-ca-white border-2 border-ca-border flex items-center justify-center">
+              <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl bg-ca-white border border-ca-border flex items-center justify-center">
                 <svg className="w-16 h-16 text-ca-light" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
                 </svg>
@@ -22,7 +22,7 @@ export default function About() {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-3 w-full">
                 {stats.map((s) => (
-                  <div key={s.label} className="text-center bg-ca-white rounded-xl p-3 border border-ca-border">
+                  <div key={s.label} className="text-center bg-ca-white rounded-lg p-3 border border-ca-border">
                     <div className="font-display text-xl font-bold text-ca-text">{s.value}</div>
                     <div className="text-[10px] text-ca-muted leading-tight mt-0.5">{s.label}</div>
                   </div>
@@ -35,7 +35,7 @@ export default function About() {
               <span className="section-label">Founder</span>
 
               <div className="mt-3">
-                <h2 className="font-display text-2xl sm:text-3xl font-bold text-ca-text">Teon Moore</h2>
+                <h2 className="font-display text-2xl sm:text-3xl font-bold text-ca-text">The Founder</h2>
                 <p className="text-ca-accent text-sm font-semibold mt-1">Founder &amp; Lead Engineer</p>
               </div>
 

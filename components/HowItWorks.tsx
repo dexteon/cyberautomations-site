@@ -44,7 +44,7 @@ export default function HowItWorks() {
             {steps.map((step, i) => (
               <div key={step.num} className="relative">
                 {/* Large background number */}
-                <span className="absolute -top-4 left-0 font-display text-[80px] font-800 text-ca-border/60 leading-none select-none" aria-hidden="true">
+                <span className="absolute -top-4 left-0 font-display text-[80px] font-bold text-ca-border/60 leading-none select-none" aria-hidden="true">
                   {step.num}
                 </span>
 
@@ -69,7 +69,7 @@ export default function HowItWorks() {
         <div className="lg:hidden space-y-4">
           {steps.map((step) => (
             <div key={step.num} className="warm-card p-6 flex gap-5">
-              <span className="font-display text-3xl font-800 text-ca-accent/30 leading-none shrink-0 pt-1">
+              <span className="font-display text-3xl font-bold text-ca-accent/30 leading-none shrink-0 pt-1">
                 {step.num}
               </span>
               <div className="space-y-2">

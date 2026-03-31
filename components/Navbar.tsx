@@ -39,8 +39,8 @@ export default function Navbar() {
           {/* Wordmark */}
           <Link
             href="/"
-            className="font-display text-sm font-700 tracking-widest uppercase text-ca-text"
-            style={{ letterSpacing: "0.12em" }}
+            className="font-display text-sm font-bold tracking-widest uppercase text-ca-text"
+            style={{ letterSpacing: "0.06em" }}
           >
             CYBER<span className="text-ca-accent">AUTOMATIONS</span>
           </Link>
@@ -86,8 +86,8 @@ export default function Navbar() {
           {/* Close row */}
           <div className="flex items-center justify-between px-6 h-16 border-b border-ca-border">
             <span
-              className="font-display text-sm font-700 tracking-widest uppercase text-ca-text"
-              style={{ letterSpacing: "0.12em" }}
+              className="font-display text-sm font-bold tracking-widest uppercase text-ca-text"
+              style={{ letterSpacing: "0.06em" }}
             >
               CYBER<span className="text-ca-accent">AUTOMATIONS</span>
             </span>
@@ -109,8 +109,7 @@ export default function Navbar() {
               <a
                 key={href}
                 href={href}
-                className="font-display text-3xl font-700 text-ca-text py-3 border-b border-ca-border hover:text-ca-accent transition-colors"
-                style={{ fontWeight: 700 }}
+                className="font-display text-2xl font-bold text-ca-text py-3 border-b border-ca-border hover:text-ca-accent transition-colors"
                 onClick={() => setMenuOpen(false)}
               >
                 {label}

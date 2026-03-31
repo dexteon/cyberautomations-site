@@ -116,7 +116,7 @@ export default function Portfolio() {
                   <div className="flex flex-wrap items-center gap-1.5">
                     {p.workflow.map((step, j) => (
                       <span key={step} className="flex items-center gap-1.5">
-                        <span className="text-[11px] bg-ca-cream-mid border border-ca-border px-2.5 py-1 rounded-full text-ca-muted whitespace-nowrap">
+                        <span className="text-[11px] bg-ca-cream-mid border border-ca-border px-2.5 py-1 rounded text-ca-muted whitespace-nowrap">
                           {step}
                         </span>
                         {j < p.workflow.length - 1 && (

@@ -23,7 +23,7 @@ export default function FinalCTA() {
 
         <div className="pt-2">
           <Link href="/apply">
-            <button className="bg-white text-ca-accent font-bold px-8 py-4 text-base rounded-full transition-all hover:shadow-xl hover:shadow-black/10 hover:-translate-y-0.5">
+            <button className="bg-white text-ca-accent font-bold px-8 py-4 text-base rounded-lg transition-all hover:shadow-xl hover:shadow-black/10 hover:-translate-y-0.5">
               Apply Now →
             </button>
           </Link>

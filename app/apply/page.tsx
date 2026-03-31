@@ -40,7 +40,7 @@ export default function ApplyPage() {
   };
 
   const inputClass =
-    "w-full bg-ca-white border-2 border-ca-border rounded-xl px-4 py-3 text-sm text-ca-text placeholder-ca-light focus:outline-none focus:border-ca-accent/50 focus:ring-2 focus:ring-ca-accent/10 transition-all";
+    "w-full bg-ca-white border border-ca-border rounded-lg px-4 py-3 text-sm text-ca-text placeholder-ca-light focus:outline-none focus:border-ca-accent/50 focus:ring-2 focus:ring-ca-accent/10 transition-all";
 
   const labelClass = "block text-sm font-medium text-ca-text mb-1.5";
 
@@ -69,7 +69,7 @@ export default function ApplyPage() {
 
         {state === "success" ? (
           <div className="warm-card p-10 text-center space-y-4">
-            <div className="w-14 h-14 rounded-full bg-ca-accent-light flex items-center justify-center mx-auto">
+            <div className="w-14 h-14 rounded-xl bg-ca-accent-light flex items-center justify-center mx-auto">
               <svg className="w-7 h-7 text-ca-accent" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
               </svg>

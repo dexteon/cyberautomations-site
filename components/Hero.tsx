@@ -160,7 +160,7 @@ export default function Hero() {
                     {/* Node */}
                     <div className="flex flex-col items-center gap-2 min-w-0">
                       <div
-                        className="w-12 h-12 rounded-full border-2 border-ca-border bg-ca-cream flex items-center justify-center text-ca-accent pipeline-node-pulse shrink-0"
+                        className="w-12 h-12 rounded-xl border border-ca-border bg-ca-cream flex items-center justify-center text-ca-accent pipeline-node-pulse shrink-0"
                         style={{ animationDelay: `${i * 0.5}s` }}
                       >
                         {node.icon}

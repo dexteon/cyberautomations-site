@@ -90,7 +90,7 @@ export default function Bundles() {
               key={t.name}
               className={`warm-card p-7 flex flex-col space-y-6 relative ${
                 t.highlight
-                  ? "border-t-4 border-t-ca-accent shadow-lg shadow-orange-500/8 md:scale-[1.03] z-10"
+                  ? "border-t-2 border-t-ca-accent shadow-lg shadow-orange-500/8 md:scale-[1.02] z-10"
                   : ""
               }`}
             >
@@ -121,7 +121,7 @@ export default function Bundles() {
               <div className="pt-4 border-t border-ca-border">
                 <a href="/apply">
                   <button
-                    className={`w-full py-3 text-sm font-semibold rounded-full transition-all ${
+                    className={`w-full py-3 text-sm font-semibold rounded-lg transition-all ${
                       t.highlight ? "btn-accent" : "btn-outline"
                     }`}
                   >
@@ -135,7 +135,7 @@ export default function Bundles() {
 
         {/* Annual badge */}
         <div className="text-center mt-6">
-          <span className="inline-flex items-center gap-2 text-sm text-ca-accent font-semibold bg-ca-accent-light border border-ca-accent/20 rounded-full px-4 py-1.5">
+          <span className="inline-flex items-center gap-2 text-sm text-ca-accent font-semibold bg-ca-accent-light border border-ca-accent/20 rounded-lg px-4 py-1.5">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3"/>
               <circle cx="12" cy="12" r="9"/>

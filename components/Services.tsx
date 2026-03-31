@@ -105,7 +105,7 @@ export default function Services() {
           {creatorProducts.map((s) => (
             <div key={s.title} className="warm-card warm-card-hover p-7 flex flex-col space-y-5">
               <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-xl bg-ca-accent-light text-ca-accent flex items-center justify-center">
+                <div className="w-11 h-11 rounded-lg bg-ca-accent-light text-ca-accent flex items-center justify-center">
                   {s.icon}
                 </div>
                 <span className={`tag-pill text-[10px] ${s.tagClass}`}>

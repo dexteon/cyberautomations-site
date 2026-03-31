@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --ca-cream:         #FAFAF7;
-  --ca-cream-mid:     #F0EDE6;
-  --ca-cream-footer:  #EDEAE3;
-  --ca-border:        #E8E4DC;
-  --ca-text:          #1A1614;
-  --ca-muted:         #6B6560;
-  --ca-light:         #9C9490;
-  --ca-accent:        #FF5C35;
-  --ca-accent-hover:  #E84A24;
-  --ca-accent-light:  #FFF0EC;
+  --ca-cream:         #FAFAFA;
+  --ca-cream-mid:     #F4F4F5;
+  --ca-cream-footer:  #EBEBED;
+  --ca-border:        #E4E4E7;
+  --ca-text:          #18181B;
+  --ca-muted:         #71717A;
+  --ca-light:         #A1A1AA;
+  --ca-accent:        #F4511E;
+  --ca-accent-hover:  #E64A19;
+  --ca-accent-light:  #FFF3E0;
   --ca-white:         #FFFFFF;
 }
 
@@ -23,7 +23,7 @@ html {
 body {
   background-color: var(--ca-cream);
   color: var(--ca-text);
-  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -33,23 +33,24 @@ body {
 
   .warm-card {
     background: var(--ca-white);
-    border: 2px solid var(--ca-border);
-    border-radius: 16px;
+    border: 1px solid var(--ca-border);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
 
   .warm-card-hover {
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
   }
   .warm-card-hover:hover {
     border-color: var(--ca-accent);
-    box-shadow: 0 8px 32px rgba(255, 92, 53, 0.1);
-    transform: translateY(-3px);
+    box-shadow: 0 4px 24px rgba(244, 81, 30, 0.08);
+    transform: translateY(-2px);
   }
 
   .warm-card-subtle {
     background: var(--ca-cream-mid);
-    border: 1.5px solid var(--ca-border);
-    border-radius: 14px;
+    border: 1px solid var(--ca-border);
+    border-radius: 10px;
   }
 
   /* ─── Buttons ────────────────────────────────────────── */
@@ -58,25 +59,25 @@ body {
     background: var(--ca-accent);
     color: #fff;
     font-weight: 600;
-    border-radius: 100px;
+    border-radius: 8px;
     border: none;
     cursor: pointer;
-    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
   }
   .btn-accent:hover {
     background: var(--ca-accent-hover);
     transform: translateY(-1px);
-    box-shadow: 0 4px 20px rgba(255, 92, 53, 0.35);
+    box-shadow: 0 4px 16px rgba(244, 81, 30, 0.25);
   }
 
   .btn-outline {
     background: transparent;
     color: var(--ca-text);
     font-weight: 600;
-    border-radius: 100px;
-    border: 2px solid var(--ca-border);
+    border-radius: 8px;
+    border: 1px solid var(--ca-border);
     cursor: pointer;
-    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
   }
   .btn-outline:hover {
     border-color: var(--ca-accent);
@@ -90,15 +91,15 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--ca-accent);
-    padding: 4px 12px;
-    border-radius: 100px;
+    padding: 4px 10px;
+    border-radius: 6px;
     background: var(--ca-accent-light);
-    border: 1px solid rgba(255, 92, 53, 0.2);
+    border: 1px solid rgba(244, 81, 30, 0.15);
   }
 
   .tag-pill {
@@ -106,37 +107,37 @@ body {
     align-items: center;
     font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.04em;
-    padding: 3px 10px;
-    border-radius: 100px;
-    border: 1.5px solid currentColor;
+    letter-spacing: 0.02em;
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid currentColor;
   }
 
   /* ─── Typography ─────────────────────────────────────── */
 
   .display-xl {
-    font-family: var(--font-syne), system-ui, sans-serif;
-    font-size: clamp(2.75rem, 6vw, 4.5rem);
-    font-weight: 800;
-    line-height: 1.04;
-    letter-spacing: -0.02em;
+    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
     color: var(--ca-text);
   }
 
   .display-lg {
-    font-family: var(--font-syne), system-ui, sans-serif;
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
     font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.015em;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
     color: var(--ca-text);
   }
 
   .display-md {
-    font-family: var(--font-syne), system-ui, sans-serif;
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 700;
-    line-height: 1.2;
+    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 600;
+    line-height: 1.25;
     letter-spacing: -0.01em;
     color: var(--ca-text);
   }
@@ -192,8 +193,8 @@ body {
 
   .reveal {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(12px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
   }
   .reveal.in-view {
     opacity: 1;
@@ -202,17 +203,17 @@ body {
 
   /* Legacy glass-card kept for apply page compatibility */
   .glass-card {
-    background: rgba(255,255,255,0.9);
-    border: 1.5px solid var(--ca-border);
-    border-radius: 14px;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid var(--ca-border);
+    border-radius: 12px;
   }
 
   /* Badge compat shim */
   .badge-cyan { display: inline-flex; }
-  .num-highlight { font-family: var(--font-syne), sans-serif; font-weight: 700; }
+  .num-highlight { font-family: var(--font-space-grotesk), sans-serif; font-weight: 700; }
 
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(12px); }
     to   { opacity: 1; transform: translateY(0); }
   }
 }
