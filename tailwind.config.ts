@@ -8,22 +8,61 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "ca-navy":     "#0A0F1E",
-        "ca-charcoal": "#111827",
-        "ca-electric": "#00D4FF",
-        "ca-mint":     "#00FFB2",
-        "ca-slate":    "#1E293B",
-        "ca-muted":    "#64748B",
-        "ca-offwhite": "#F8FAFC",
-        "ca-white":    "#FFFFFF",
+        "ca-cream":         "#FAFAF7",
+        "ca-cream-mid":     "#F0EDE6",
+        "ca-cream-footer":  "#EDEAE3",
+        "ca-border":        "#E8E4DC",
+        "ca-text":          "#1A1614",
+        "ca-muted":         "#6B6560",
+        "ca-light":         "#9C9490",
+        "ca-accent":        "#FF5C35",
+        "ca-accent-hover":  "#E84A24",
+        "ca-accent-light":  "#FFF0EC",
+        "ca-white":         "#FFFFFF",
+        // Legacy aliases — prevent build errors from any leftover refs
+        "ca-bg":            "#FAFAF7",
+        "ca-surface":       "#FFFFFF",
+        "ca-cyan":          "#FF5C35",
+        "ca-purple":        "#FF5C35",
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        display: ["var(--font-syne)", "system-ui", "sans-serif"],
+        sans:    ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        mono:    ["JetBrains Mono", "monospace"],
       },
-      backgroundImage: {
-        "gradient-electric": "linear-gradient(135deg, #00D4FF 0%, #00FFB2 100%)",
-        "gradient-dark": "linear-gradient(180deg, #0A0F1E 0%, #111827 100%)",
+      keyframes: {
+        marquee: {
+          "0%":   { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        nodePulse: {
+          "0%, 100%": { opacity: "1" },
+          "50%":      { opacity: "0.55" },
+        },
+        connectorFill: {
+          "0%":   { transform: "translateX(-101%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
+        fadeSlideUp: {
+          "0%":   { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeIn: {
+          "0%":   { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        accordionOpen: {
+          "0%":   { opacity: "0", transform: "translateY(-8px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        marquee:        "marquee 40s linear infinite",
+        nodePulse:      "nodePulse 2.5s ease-in-out infinite",
+        connectorFill:  "connectorFill 0.5s ease-out forwards",
+        fadeSlideUp:    "fadeSlideUp 0.5s ease-out forwards",
+        fadeIn:         "fadeIn 0.4s ease-out forwards",
+        accordionOpen:  "accordionOpen 0.2s ease-out forwards",
       },
     },
   },

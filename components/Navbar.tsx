@@ -1,65 +1,134 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+
+const NAV_LINKS = [
+  ["#services", "Services"],
+  ["#pricing", "Pricing"],
+  ["#portfolio", "Portfolio"],
+  ["#about", "About"],
+  ["#faq", "FAQ"],
+] as const;
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 16);
+    window.addEventListener("scroll", handler, { passive: true });
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
+
+  // Prevent body scroll when overlay is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-ca-navy/90 backdrop-blur-md border-b border-white/5">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <a href="/" className="flex items-center gap-2">
-          <span className="text-ca-electric font-bold text-lg tracking-tight">
-            CYBR<span className="text-ca-white">AUTOMATIONS</span>
-          </span>
-        </a>
-
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8 text-sm text-ca-muted">
-          <a href="#how-it-works" className="hover:text-ca-white transition-colors">How It Works</a>
-          <a href="#services" className="hover:text-ca-white transition-colors">Services</a>
-          <a href="#pricing" className="hover:text-ca-white transition-colors">Pricing</a>
-          <a href="#faq" className="hover:text-ca-white transition-colors">FAQ</a>
-        </div>
-
-        {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="#audit"
-            className="px-4 py-2 text-sm font-semibold text-ca-navy bg-ca-electric rounded-lg hover:brightness-110 transition-all"
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-ca-cream/85 backdrop-blur-xl border-b border-ca-border shadow-sm"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+          {/* Wordmark */}
+          <Link
+            href="/"
+            className="font-display text-sm font-700 tracking-widest uppercase text-ca-text"
+            style={{ letterSpacing: "0.12em" }}
           >
-            Book Free Audit
-          </a>
+            CYBER<span className="text-ca-accent">AUTOMATIONS</span>
+          </Link>
+
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-ca-muted">
+            {NAV_LINKS.map(([href, label]) => (
+              <a
+                key={href}
+                href={href}
+                className="hover:text-ca-text transition-colors"
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+
+          <Link
+            href="/apply"
+            className="hidden md:inline-flex btn-accent px-5 py-2 text-sm"
+          >
+            Apply Now
+          </Link>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden w-10 h-10 flex items-center justify-center text-ca-muted hover:text-ca-text transition-colors"
+            onClick={() => setMenuOpen(true)}
+            aria-label="Open menu"
+          >
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+              <line x1="3" y1="6" x2="19" y2="6" />
+              <line x1="3" y1="11" x2="19" y2="11" />
+              <line x1="3" y1="16" x2="19" y2="16" />
+            </svg>
+          </button>
         </div>
+      </header>
 
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden text-ca-muted hover:text-ca-white"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
-            {open ? (
-              <path d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path d="M3 12h18M3 6h18M3 18h18" />
-            )}
-          </svg>
-        </button>
-      </div>
+      {/* Full-screen mobile overlay */}
+      {menuOpen && (
+        <div className="fixed inset-0 z-[60] bg-ca-cream flex flex-col animate-fadeIn">
+          {/* Close row */}
+          <div className="flex items-center justify-between px-6 h-16 border-b border-ca-border">
+            <span
+              className="font-display text-sm font-700 tracking-widest uppercase text-ca-text"
+              style={{ letterSpacing: "0.12em" }}
+            >
+              CYBER<span className="text-ca-accent">AUTOMATIONS</span>
+            </span>
+            <button
+              className="w-10 h-10 flex items-center justify-center text-ca-muted hover:text-ca-text transition-colors"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+                <line x1="4" y1="4" x2="18" y2="18" />
+                <line x1="18" y1="4" x2="4" y2="18" />
+              </svg>
+            </button>
+          </div>
 
-      {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden bg-ca-charcoal border-t border-white/5 px-6 py-4 flex flex-col gap-4 text-sm">
-          <a href="#how-it-works" className="text-ca-muted hover:text-ca-white" onClick={() => setOpen(false)}>How It Works</a>
-          <a href="#services" className="text-ca-muted hover:text-ca-white" onClick={() => setOpen(false)}>Services</a>
-          <a href="#pricing" className="text-ca-muted hover:text-ca-white" onClick={() => setOpen(false)}>Pricing</a>
-          <a href="#faq" className="text-ca-muted hover:text-ca-white" onClick={() => setOpen(false)}>FAQ</a>
-          <a href="#audit" className="px-4 py-2 text-center font-semibold text-ca-navy bg-ca-electric rounded-lg" onClick={() => setOpen(false)}>
-            Book Free Audit
-          </a>
+          {/* Links */}
+          <nav className="flex flex-col flex-1 px-6 pt-10 gap-2">
+            {NAV_LINKS.map(([href, label]) => (
+              <a
+                key={href}
+                href={href}
+                className="font-display text-3xl font-700 text-ca-text py-3 border-b border-ca-border hover:text-ca-accent transition-colors"
+                style={{ fontWeight: 700 }}
+                onClick={() => setMenuOpen(false)}
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="px-6 pb-12">
+            <Link
+              href="/apply"
+              className="btn-accent w-full py-4 text-base flex items-center justify-center"
+              onClick={() => setMenuOpen(false)}
+            >
+              Apply Now →
+            </Link>
+          </div>
         </div>
       )}
-    </nav>
+    </>
   );
 }

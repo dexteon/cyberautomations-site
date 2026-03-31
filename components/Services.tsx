@@ -1,111 +1,151 @@
-const services = [
+const creatorProducts = [
   {
-    name: "The Content Machine",
     tag: "Flagship",
-    tagColor: "text-ca-electric bg-ca-electric/10 border-ca-electric/20",
-    price: "From $997/mo",
-    description:
-      "Your full content production department, managed end-to-end. Voice memo in, 20 pieces out. Brand voice trained on your existing content library. Compliance gate for sensitive niches. Routes to every platform automatically.",
+    tagClass: "text-ca-accent bg-ca-accent-light border-ca-accent/30",
+    title: "The Content Machine",
+    desc: "One 5-minute voice memo Monday morning. Twenty publication-ready pieces by afternoon — written in your voice, routed to your platforms.",
     features: [
-      "9-agent AI pipeline (CrewAI + n8n)",
-      "Brand voice training on your content library",
-      "YouTube, Reels, Email, Community, Carousel formats",
-      "Performance feedback loop — system improves weekly",
-      "Compliance gate for financial/health/legal niches",
-      "Direct routing to GHL, Buffer, Skool, Google Drive",
+      "2 YouTube scripts, 6 Reels scripts, 3 emails, 5 community posts, 4 carousel outlines",
+      "Brand voice trained on your existing content library",
+      "Compliance gate for financial / health / legal niches",
+      "Routes to GHL, Buffer, Skool, Google Drive",
     ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+        <path d="M12 2a4 4 0 014 4v6a4 4 0 01-8 0V6a4 4 0 014-4z"/>
+        <path d="M19 10a7 7 0 01-14 0"/>
+        <line x1="12" y1="19" x2="12" y2="23"/>
+      </svg>
+    ),
   },
   {
-    name: "Video Distribution",
     tag: "Add-On",
-    tagColor: "text-ca-muted bg-ca-muted/10 border-ca-muted/20",
-    price: "From $400/mo",
-    description:
-      "Upload once. Publish everywhere. Long-form video processed into all aspect ratios, transcribed, captioned in English and Spanish, and distributed to every short-form platform within 24 hours of upload.",
+    tagClass: "text-ca-muted bg-ca-cream-mid border-ca-border",
+    title: "Video Distribution",
+    desc: "Upload once, publish everywhere. FFmpeg processing, Whisper transcription, Claude-generated captions. 7 platforms, 24-hour SLA.",
     features: [
-      "16:9, 9:16, and 1:1 format processing",
-      "Whisper transcription + AI-generated captions",
-      "English and Spanish caption generation",
-      "Auto-publish to YouTube, Instagram, TikTok, X, Pinterest, Threads, Facebook",
-      "A/B tested hook lines for Shorts/Reels",
-      "24-hour delivery SLA",
+      "All aspect ratios (16:9, 9:16, 1:1)",
+      "Whisper transcription + bilingual captions",
+      "7-platform auto-publish within 24 hours",
+      "A/B tested hook lines for Shorts and Reels",
     ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+        <polygon points="5 3 19 12 5 21 5 3"/>
+      </svg>
+    ),
   },
   {
-    name: "Community Support Bot",
     tag: "Add-On",
-    tagColor: "text-ca-muted bg-ca-muted/10 border-ca-muted/20",
-    price: "From $450/mo",
-    description:
-      "A white-label AI assistant trained on your course content, community history, and FAQs. Deployed under your brand name. Handles 70–80% of repetitive community questions so you don't have to.",
+    tagClass: "text-ca-muted bg-ca-cream-mid border-ca-border",
+    title: "Community Support Bot",
+    desc: "White-label AI assistant deployed under your brand. Trained on your courses and FAQs. 70–80% containment rate.",
     features: [
-      "Trained on your course materials and community FAQs",
+      "Trained on your courses, FAQs, and support history",
       "White-labeled under your brand name",
       "Deployed in Skool, Discord, or your website",
-      "Voice-capable",
-      "Escalates unresolved questions to you via Slack",
       "Monthly containment rate report",
     ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+        <circle cx="12" cy="10" r="1" fill="currentColor"/>
+        <circle cx="8" cy="10" r="1" fill="currentColor"/>
+        <circle cx="16" cy="10" r="1" fill="currentColor"/>
+      </svg>
+    ),
+  },
+  {
+    tag: "New",
+    tagClass: "text-ca-accent bg-ca-accent-light border-ca-accent/30",
+    title: "Creator Data Shield",
+    desc: "Automated personal data removal across 100+ data broker sites. CDPA-compliant reporting. Built for public-facing creators.",
+    features: [
+      "Automated removal across 100+ data brokers",
+      "Scheduled re-checks and re-submissions",
+      "Personal + business entity coverage",
+      "CDPA-compliant removal reports",
+    ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+        <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.32C17.25 22.15 21 17.25 21 12V7l-9-5z"/>
+        <path d="M9 12l2 2 4-4"/>
+      </svg>
+    ),
   },
 ];
 
+function CheckIcon({ accent }: { accent?: boolean }) {
+  return (
+    <svg className={`w-4 h-4 shrink-0 mt-0.5 ${accent ? "text-ca-accent" : "text-ca-accent/60"}`} fill="currentColor" viewBox="0 0 20 20">
+      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+    </svg>
+  );
+}
+
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-ca-charcoal">
+    <section id="services" className="py-20 bg-ca-cream">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-ca-electric text-sm font-semibold uppercase tracking-widest">What We Build</span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-bold">
-            Three systems. One infrastructure.
-          </h2>
-          <p className="mt-4 text-ca-muted max-w-xl mx-auto">
-            Each product is designed to eliminate a specific bottleneck. Stack them to
-            run your entire content operation on autopilot.
+        {/* Header */}
+        <div className="text-center mb-14 space-y-3">
+          <span className="section-label">Creator Stack</span>
+          <h2 className="display-lg mt-4">Four Systems. One Infrastructure.</h2>
+          <p className="text-ca-muted max-w-xl mx-auto text-base">
+            Built specifically for creators and educators doing $5K–$50K/month.
+            Stack them to run your entire content operation on autopilot.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {services.map((s) => (
-            <div key={s.name} className="card-dark p-6 flex flex-col gap-5 hover:border-white/10 transition-colors">
-              <div className="flex items-start justify-between">
-                <div>
-                  <span className={`inline-block text-xs font-medium px-2.5 py-0.5 rounded-full border mb-3 ${s.tagColor}`}>
-                    {s.tag}
-                  </span>
-                  <h3 className="text-lg font-semibold text-ca-white">{s.name}</h3>
-                  <p className="text-ca-electric font-semibold mt-1">{s.price}</p>
+        {/* 2×2 grid */}
+        <div className="grid md:grid-cols-2 gap-5">
+          {creatorProducts.map((s) => (
+            <div key={s.title} className="warm-card warm-card-hover p-7 flex flex-col space-y-5">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-xl bg-ca-accent-light text-ca-accent flex items-center justify-center">
+                  {s.icon}
                 </div>
+                <span className={`tag-pill text-[10px] ${s.tagClass}`}>
+                  {s.tag}
+                </span>
               </div>
 
-              <p className="text-ca-muted text-sm leading-relaxed">{s.description}</p>
+              <div>
+                <h3 className="font-display text-lg font-bold text-ca-text">{s.title}</h3>
+                <p className="text-ca-muted text-sm leading-relaxed mt-2">{s.desc}</p>
+              </div>
 
-              <ul className="flex flex-col gap-2.5 mt-auto">
+              <ul className="flex-1 space-y-2">
                 {s.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm text-ca-muted">
-                    <svg className="w-4 h-4 text-ca-mint shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                    </svg>
+                  <li key={f} className="flex items-start gap-2.5 text-sm text-ca-muted">
+                    <CheckIcon accent={s.tag === "Flagship" || s.tag === "New"} />
                     {f}
                   </li>
                 ))}
               </ul>
+
+              <div className="pt-4 border-t border-ca-border">
+                <a href={s.tag === "Flagship" ? "#pricing" : "/apply"} className="text-sm font-semibold text-ca-accent hover:underline">
+                  {s.tag === "Flagship" ? "See Pricing →" : "Apply to get pricing →"}
+                </a>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Bundle callout */}
-        <div className="mt-8 rounded-2xl border border-ca-electric/20 bg-ca-electric/5 p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        {/* Custom callout strip */}
+        <div className="mt-8 warm-card-subtle p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <span className="text-ca-mint text-xs font-semibold uppercase tracking-widest">Best Value</span>
-            <h3 className="text-xl font-bold text-ca-white mt-1">Full Creator OS</h3>
-            <p className="text-ca-muted text-sm mt-1">All 3 systems. Complete content infrastructure. Save $347/month vs. individual pricing.</p>
+            <p className="font-display font-semibold text-ca-text">Need something custom?</p>
+            <p className="text-ca-muted text-sm mt-0.5">
+              We also build AI agents, security automation, and enterprise data pipelines.
+            </p>
           </div>
-          <div className="text-right shrink-0">
-            <p className="text-3xl font-bold text-ca-white">$2,500<span className="text-ca-muted text-base font-normal">/mo</span></p>
-            <a href="#audit" className="mt-3 inline-block px-5 py-2.5 text-sm font-semibold text-ca-navy bg-ca-electric rounded-xl hover:brightness-110 transition-all">
-              Get the Bundle →
-            </a>
-          </div>
+          <a href="/apply" className="shrink-0">
+            <button className="btn-outline px-5 py-2.5 text-sm">
+              Custom Scope →
+            </button>
+          </a>
         </div>
       </div>
     </section>
